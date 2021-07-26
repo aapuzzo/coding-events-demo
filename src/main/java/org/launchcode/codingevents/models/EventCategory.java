@@ -7,11 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
-public class EventCategory {
-
-    @Id
-    @GeneratedValue
-    private int id;
+public class EventCategory extends AbstractEntity{
 
     @Size(min=3, max=50, message="Must be between 3-50 characters.")
     private String name;
@@ -21,14 +17,6 @@ public class EventCategory {
     }
 
     public EventCategory() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
